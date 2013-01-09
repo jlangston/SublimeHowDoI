@@ -3,7 +3,7 @@
 # Very early proof of concept utilizing https://github.com/gleitz/howdoi
 
 
-import sublime
+# import sublime
 import sublime_plugin
 import commands
 
