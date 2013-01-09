@@ -1,0 +1,34 @@
+[
+  {
+    "syntaxes": [
+      "C",
+      "C++",
+      "C#",
+      "CoffeeScript",
+      "CSS",
+      "D",
+      "Erlang",
+      "HTML",
+      "Groovy",
+      "Haskell",
+      "HTML",
+      "Java",
+      "JavaScript",
+      "LaTeX",
+      "Lisp",
+      "Lua",
+      "Markdown",
+      "Matlab",
+      "OCaml",
+      "Perl",
+      "PHP",
+      "Python",
+      "R",
+      "Ruby",
+      "SQL",
+      "TCL",
+      "Textile",
+      "XML"
+    ]
+  }
+]
