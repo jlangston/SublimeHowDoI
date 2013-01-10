@@ -11,7 +11,7 @@ At this point you have to have [howdoi](https://github.com/gleitz/howdoi) instal
 
 
 # Usage
-::
+
     How Do I: [-h] [-p POS] [-a] [-l] QUERY [QUERY ...]
 
     code search tool
