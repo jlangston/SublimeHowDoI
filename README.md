@@ -26,19 +26,18 @@ At this point you have to have [howdoi](https://github.com/gleitz/howdoi) instal
       -l, --link         display only the answer link
 
 # Settings
-    Default shortcut key super + alt + h to show How Do I: search box
+Default shortcut key super + alt + h to show How Do I: search box
 
-    Settings file:
-        syntaxes: List of languages with syntax hilighting support that the plugin will try to match depending on the howdoi question
+Settings file:
+  syntaxes: List of languages with syntax hilighting support that
+  the plugin will try to match depending on the howdoi question
 
-        useBuffer: Show howdoi answer in quick panel or new tab
+  useBuffer: Show howdoi answer in quick panel or new tab
 
 
 # Disclaimer
 
-This is my first go at a sublime text plugin it's only been tested on OSX and still has lots of room for improvement and polish.
-
-I'd like to get it running on windows but to this point I've had issues installing howdoi on windows. I'll look at making this plugin work under windows once I can get the command like version working in windows.
+This is my first go at a sublime text plugin it's only been tested on OSX and Windows and still has lots of room for improvement and polish.
 
 # Other Notes
 

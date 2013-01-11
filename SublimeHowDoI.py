@@ -5,8 +5,7 @@
 import sublime
 import sublime_plugin
 import threading
-import commands
-# import subprocess
+import subprocess
 
 #Load Settings
 settings = sublime.load_settings("SublimeHowDoI.sublime-settings")
@@ -38,9 +37,8 @@ class HowdoiCommand(sublime_plugin.WindowCommand):
 
         def run(self):
             query = self._query
-            # p = subprocess.Popen("howdoi " + query, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
-            # stdoutdata = p.communicate().get(0)
-            query_response = commands.getstatusoutput("howdoi " + query)
+            p = subprocess.Popen("howdoi " + query, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+            query_response = p.communicate()
             syntaxes = [x.lower() for x in self._syntaxes]
             matchedSyntax = False
             for searchWord in query.split():
@@ -63,7 +61,7 @@ class HowdoiCommand(sublime_plugin.WindowCommand):
                 output_view = window.get_output_panel('howdoi_answer')
                 edit = output_view.begin_edit()
                 output_view.erase(edit, sublime.Region(0, output_view.size()))
-                output_view.insert(edit, 0, query_response[1])
+                output_view.insert(edit, 0, query_response[0])
                 output_view.end_edit(edit)
                 window.run_command('show_panel', {"panel": 'output.howdoi_answer'})
             if matchedSyntax:
