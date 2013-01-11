@@ -1,3 +1,4 @@
 *.pyc
 *.cache
 *.sublime-project
+*.DS_Stors
