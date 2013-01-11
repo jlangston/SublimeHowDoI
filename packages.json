@@ -1,0 +1,16 @@
+{
+    "schema_version": "1.2",
+    "packages": [
+        {
+            "name": "How Do I",
+            "description": "How Do I Code Search for Sublime Text 2",
+            "author": "Jeff Langston",
+            "homepage": "https://github.com/jlangston/SublimeHowDoI",
+            "last_modified": "2013-01-12 01:23:31",
+            "platforms": {
+                "osx": [],
+                "linux": []
+            }
+        }
+    ]
+}
