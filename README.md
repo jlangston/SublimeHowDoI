@@ -43,7 +43,7 @@ This is my first go at a sublime text plugin it's only been tested on OSX and Wi
 
 # Other Notes
 
-The entire utility could be packaged up into the plugin without having to require having the command line version installed but all the python library dependencies would need to be sorted out to be included with the plugin.
+Ideally the entire utility could be packaged up into the plugin without having to require having the command line version installed but all the python library dependencies would need to be sorted out to be included with the plugin.
 
 If you like the idea behind this plugin and would like to see improvements pull requests are welcome
 
