@@ -8,7 +8,12 @@
             "homepage": "https://github.com/jlangston/SublimeHowDoI",
             "last_modified": "2013-01-12 01:23:31",
             "platforms": {
-                "*": [],
+                "*": [
+                    {
+                        "version": "1.0.0",
+                        "url": "https://nodeload.github.com/jlangston/SublimeHowDoI/zip/1.0.0"
+                    }
+                ],
             }
         }
     ]
