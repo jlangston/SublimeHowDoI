@@ -26,7 +26,7 @@ At this point you have to have [howdoi](https://github.com/gleitz/howdoi) instal
       -l, --link         display only the answer link
 
 # Settings
-    Default shortcut key super + alt + h to
+    Default shortcut key super + alt + h to show How Do I: search box
 
     Settings file:
         syntaxes: List of languages with syntax hilighting support that the plugin will try to match depending on the howdoi question
