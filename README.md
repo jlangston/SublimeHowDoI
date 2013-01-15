@@ -6,7 +6,7 @@ Look for How Do I: code search in command palette entery query and the response 
 
 # Install
 Until this is availible on package control you'll have to either 
-git clone: https://github.com/jlangston/Sublime-How-Do-I into your packages folder or
+git clone: https://github.com/jlangston/SublimeHowDoI into your packages folder or
 download the zip of the repository and place that in your packages folder
 
 At this point you have to have [howdoi](https://github.com/gleitz/howdoi) installed and working from the command line for this plugin to work at all
