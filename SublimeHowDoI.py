@@ -41,6 +41,7 @@ class HowdoiCommand(sublime_plugin.WindowCommand):
             query_response = p.communicate()
             syntaxes = [x.lower() for x in self._syntaxes]
             matchedSyntax = False
+            searchTermSyntax = ""
             for searchWord in query.split():
                     if searchWord.lower() in syntaxes:
                         matchedSyntax = True
