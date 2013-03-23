@@ -4,6 +4,12 @@ A plugin leveraging [howdoi - a unix code search tool](https://github.com/gleitz
 
 Look for How Do I: code search in command palette entery query and the response is shown in a new tab or view when the query returns
 
+Change Log
+1. Rewrite much of the code base to make it compatible with ST3. Borrowed some codes from kemayo's sublime-text-2-goto-documentation at https://github.com/kemayo/sublime-text-2-goto-documentation.git 
+2. Add support of howdoi options except --color since ST3 have better syntax highlight scheme.
+3. Add status message for user notification
+4. Add main menu of Preferences
+
 # Install
 Until this is availible on package control you'll have to either 
 git clone: https://github.com/jlangston/SublimeHowDoI into your packages folder or
