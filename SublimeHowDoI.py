@@ -55,9 +55,10 @@ class CommandThread(threading.Thread):
                 self.command + ' ' + query, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, shell=True)
             output = p.communicate()[0]
-
+            output = output.decode('utf-8')
+            output = output.replace("\r", "")
             sublime.set_timeout(
-                functools.partial(self.on_done, output.decode('utf-8'),
+                functools.partial(self.on_done, output,
                                   searchTermSyntax, query), 0)
         except subprocess.CalledProcessError as e:
             sublime.set_timeout(
@@ -99,6 +100,7 @@ class HowdoiCommand(sublime_plugin.TextCommand):
     def panel(self, output, searchTermSyntax, query):
         active_window = sublime.active_window()
         useBuffer = get_settings("useBuffer")
+        print(output)
         if not hasattr(self, 'output_view'):
             if useBuffer:
                 self.output_view = active_window.new_file()
