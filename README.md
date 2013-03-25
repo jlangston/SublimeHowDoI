@@ -4,12 +4,6 @@ A plugin leveraging [howdoi - a unix code search tool](https://github.com/gleitz
 
 Look for How Do I: code search in command palette entery query and the response is shown in a new tab or view when the query returns
 
-Change Log
-1. Rewrite much of the code base to make it compatible with ST3. Borrowed some codes from kemayo's sublime-text-2-goto-documentation at https://github.com/kemayo/sublime-text-2-goto-documentation.git 
-2. Add support of howdoi options except --color since ST3 have better syntax highlight scheme.
-3. Add status message for user notification
-4. Add main menu of Preferences 
-
 # Install
 Until this is availible on package control you'll have to either 
 git clone: https://github.com/jlangston/SublimeHowDoI into your packages folder or
@@ -42,14 +36,12 @@ Settings file:
 
   useBuffer: Show howdoi answer in quick panel or new tab
 
+# Contributors
+  dnatag
 
-# Disclaimer
-
-This is my first go at a sublime text plugin it's only been tested on OSX and Windows and still has lots of room for improvement and polish.
-
-# Other Notes
-
-Ideally the entire utility could be packaged up into the plugin without having to require having the command line version installed but all the python library dependencies would need to be sorted out to be included with the plugin.
-
-If you like the idea behind this plugin and would like to see improvements pull requests are welcome
+Change Log
+* Rewrite much of the code base to make it compatible with ST3. Borrowed some codes from kemayo's sublime-text-2-goto-documentation at https://github.com/kemayo/sublime-text-2-goto-documentation.git 
+* Add support of howdoi options except --color since ST3 have better syntax highlight scheme.
+* Add status message for user notification
+* Add main menu of Preferences 
 
