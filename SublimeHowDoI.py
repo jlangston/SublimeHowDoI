@@ -100,7 +100,6 @@ class HowdoiCommand(sublime_plugin.TextCommand):
     def panel(self, output, searchTermSyntax, query):
         active_window = sublime.active_window()
         useBuffer = get_settings("useBuffer")
-        print(output)
         if not hasattr(self, 'output_view'):
             if useBuffer:
                 self.output_view = active_window.new_file()
