@@ -58,7 +58,7 @@ class CommandThread(threading.Thread):
 
             sublime.set_timeout(
                 functools.partial(self.on_done, output.decode('utf-8'),
-                                  searchTermSyntax), 0)
+                                  searchTermSyntax, query), 0)
         except subprocess.CalledProcessError as e:
             sublime.set_timeout(
                 functools.partial(self.on_done, e.returncode), 0)
@@ -96,17 +96,18 @@ class HowdoiCommand(sublime_plugin.TextCommand):
     def on_cancel(self):
         pass
 
-    def panel(self, output, searchTermSyntax):
+    def panel(self, output, searchTermSyntax, query):
         active_window = sublime.active_window()
-
+        useBuffer = get_settings("useBuffer")
         if not hasattr(self, 'output_view'):
-            if get_settings("useBuffer"):
+            if useBuffer:
                 self.output_view = active_window.new_file()
+                self.output_view.set_name(query)
             else: 
                 self.output_view = active_window.create_output_panel("howdoi_answer")
         # if not hasattr(self, 'output_view'):
         # self.output_view = active_window.get_output_panel("howdoi_answer")
-        # self.output_view.settings().set("word_wrap", True)
+        self.output_view.settings().set("word_wrap", True)
         self.output_view.settings().set("line_numbers", True)
         self.output_view.settings().set("gutter", True)
         self.output_view.settings().set("scroll_past_end", False)
@@ -122,8 +123,8 @@ class HowdoiCommand(sublime_plugin.TextCommand):
             'clear': True
         })
         self.output_view.set_read_only(True)
-        active_window.run_command(
-            'show_panel', {"panel": 'output.howdoi_answer'})
+        if not useBuffer:
+            active_window.run_command('show_panel', {"panel": 'output.howdoi_answer'})
 
 
 class HowdoiShowCommand(sublime_plugin.TextCommand):
