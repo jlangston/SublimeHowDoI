@@ -1,4 +1,4 @@
-# How Do I Code Search for Sublime Text 2
+# How Do I Code Search for Sublime Text 3
 
 A plugin leveraging [howdoi - a unix code search tool](https://github.com/gleitz/howdoi) terminal command to be useable from sublime text.
 
@@ -8,7 +8,7 @@ Change Log
 1. Rewrite much of the code base to make it compatible with ST3. Borrowed some codes from kemayo's sublime-text-2-goto-documentation at https://github.com/kemayo/sublime-text-2-goto-documentation.git 
 2. Add support of howdoi options except --color since ST3 have better syntax highlight scheme.
 3. Add status message for user notification
-4. Add main menu of Preferences
+4. Add main menu of Preferences 
 
 # Install
 Until this is availible on package control you'll have to either 
