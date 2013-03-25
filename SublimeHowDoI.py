@@ -100,15 +100,17 @@ class HowdoiCommand(sublime_plugin.TextCommand):
         active_window = sublime.active_window()
 
         if not hasattr(self, 'output_view'):
-            self.output_view = active_window.create_output_panel(
-                "howdoi_answer")
-
+            if get_settings("useBuffer"):
+                self.output_view = active_window.new_file()
+            else: 
+                self.output_view = active_window.create_output_panel("howdoi_answer")
         # if not hasattr(self, 'output_view'):
         # self.output_view = active_window.get_output_panel("howdoi_answer")
-        self.output_view.settings().set("word_wrap", True)
+        # self.output_view.settings().set("word_wrap", True)
         self.output_view.settings().set("line_numbers", True)
         self.output_view.settings().set("gutter", True)
         self.output_view.settings().set("scroll_past_end", False)
+        self.output_view.settings().set("draw_white_space", "none")
         # if searchTermSyntax != '':
         # self.view.assign_syntax("Packages/" + searchTermSyntax + "/" +
         # searchTermSyntax + ".tmLanguage")
