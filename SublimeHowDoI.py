@@ -51,9 +51,8 @@ class CommandThread(threading.Thread):
                     break
 
         try:
-            p = subprocess.Popen(
-                self.command + ' ' + query, stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT, shell=True)
+            exec_path = get_settings("exec_path") or ""
+            p = subprocess.Popen(exec_path + self.command + ' ' + query, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
             output = p.communicate()[0]
             output = output.decode('utf-8')
             output = output.replace("\r", "")
@@ -104,7 +103,7 @@ class HowdoiCommand(sublime_plugin.TextCommand):
             if useBuffer:
                 self.output_view = active_window.new_file()
                 self.output_view.set_name(query)
-            else: 
+            else:
                 self.output_view = active_window.create_output_panel("howdoi_answer")
         # if not hasattr(self, 'output_view'):
         # self.output_view = active_window.get_output_panel("howdoi_answer")

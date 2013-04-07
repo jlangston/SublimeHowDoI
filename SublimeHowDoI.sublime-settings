@@ -32,7 +32,7 @@
   "options":{
     // number of answers to return
     "num-answers": 3,
-    
+
     // select answer in specified position (default: 1)
     // "pos": 2,
 
@@ -42,5 +42,6 @@
     // display the full text of the answer
     // "all":""
     },
-  "useBuffer": false
+  "useBuffer": false,
+  "exec_path":"/usr/local/bin/"
 }
