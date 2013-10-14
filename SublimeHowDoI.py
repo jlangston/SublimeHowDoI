@@ -11,9 +11,6 @@ import threading
 import subprocess
 import functools
 
-# Load Settings
-# settings = sublime.load_settings('SublimeHowDoI.sublime-settings')
-
 
 def get_settings(key, default=None, view=None):
     # sublime.load_settings is silent in startup period
@@ -105,21 +102,20 @@ class HowdoiCommand(sublime_plugin.TextCommand):
                 self.output_view.set_name(query)
             else:
                 self.output_view = active_window.create_output_panel("howdoi_answer")
-        # if not hasattr(self, 'output_view'):
-        # self.output_view = active_window.get_output_panel("howdoi_answer")
         self.output_view.settings().set("word_wrap", True)
         self.output_view.settings().set("line_numbers", True)
         self.output_view.settings().set("gutter", True)
         self.output_view.settings().set("scroll_past_end", False)
         self.output_view.settings().set("draw_white_space", "none")
-        # if searchTermSyntax != '':
-        # self.view.assign_syntax("Packages/" + searchTermSyntax + "/" +
-        # searchTermSyntax + ".tmLanguage")
 
         self.output_view.set_read_only(False)
+        if searchTermSyntax != '':
+            syntax = "Packages/" + searchTermSyntax + "/" + searchTermSyntax + ".tmLanguage"
+        else:
+            syntax = active_window.active_view().settings().get('syntax')
         self.output_view.run_command('howdoi_show', {
             'output': output,
-            'searchTermSyntax': searchTermSyntax,
+            'searchTermSyntax': syntax,
             'clear': True
         })
         self.output_view.set_read_only(True)
@@ -136,6 +132,4 @@ class HowdoiShowCommand(sublime_plugin.TextCommand):
 
         self.view.insert(edit, 0, output)
 
-        if searchTermSyntax != '':
-            self.view.set_syntax_file("Packages/" + searchTermSyntax +
-                                      "/" + searchTermSyntax + ".tmLanguage")
+        self.view.set_syntax_file(searchTermSyntax)
