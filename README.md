@@ -1,11 +1,10 @@
-# How Do I Code Search for Sublime Text 3
 
 A plugin leveraging [howdoi - a unix code search tool](https://github.com/gleitz/howdoi) terminal command to be useable from sublime text.
 
 Look for How Do I: code search in command palette entery query and the response is shown in a new tab or view when the query returns
 
 # Install
-Until this is availible on package control you'll have to either 
+Install from Package Control or 
 git clone: https://github.com/jlangston/SublimeHowDoI into your packages folder or
 download the zip of the repository and place that in your packages folder
 
